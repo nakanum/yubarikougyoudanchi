@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正規作業員/サポート作業員 募集要項 | 夕張工業団地</title>
+    <!-- 外部CSSを読み込む -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ヘッダーの差し込み口 -->
+<div id="header-placeholder"></div>
+
+<div class="hero">
+    <p>Member Recruiting</p>
+    <h1>新規作業員 募集要項</h1>
+</div>
+
+<div class="container">
+    <h2>1. 職種と業務内容</h2>
+    <table>
+        <tbody>
+            <tr>
+                <th>募集職種</th>
+                <td>ベース（正規作業員）/ ドラム（サポート作業員）</td>
+            </tr>
+            <tr>
+                <th>業務内容</th>
+                <td>
+                    <ul class="point-list">
+                        <li>既存パートの完全コピーおよび演奏</li>
+                        <li>パート制作、レコーディング（ベースのみ）</li>
+                        <li>ライブ・リハーサルへの参加</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. 応募資格</h2>
+    <table>
+        <tbody>
+            <tr>
+                <th>必須条件</th>
+                <td>
+                    <ul class="point-list">
+                        <li>安定した力強い演奏</li>
+                        <li>ツインペダル、楽曲に対応可能な操作スキル(ドラム)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>歓迎条件</th>
+                <td>
+                    <ul class="point-list">
+                        <li>DAW操作/作曲経験(ベース)</li>
+                        <li>チャイナシンバルの使用経験(ドラム)</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. 労働条件・待遇</h2>
+    <table>
+        <tbody>
+            <tr>
+                <th>契約期間</th>
+                <td>2026年7月頃 〜 無期（ベース）/ 2026年9月頃 〜 ドラムメンバー復帰まで</td>
+            </tr>
+            <tr>
+                <th>勤務地</th>
+                <td>高田馬場（スタジオ）、各ライブハウス</td>
+            </tr>
+            <tr>
+                <th>待遇</th>
+                <td>
+                    <ul class="point-list">
+                        <li>給与：能力考慮のうえ、応相談</li>
+                        <li>制服貸与</li>
+                        <li>譜面支給</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. 応募方法</h2>
+    <div style="padding: 10px 15px;">
+        <p>メールにて下記5点を送付してください。</p>
+        <p>1. 名前(ニックネーム可能) / 2. 年齢 / 3. 居住エリア / 4. 音楽経歴 / 5. 演奏動画URL</p>
+        <p style="margin-top: 15px;">
+            連絡先：<a href="mailto:ykdband@gmail.com" class="email">ykdband@gmail.com</a>
+        </p>
+    </div>
+</div>
+
+<footer>
+    © 2026 YUBARI INDUSTRIAL DISTRICT All Rights Reserved.
+</footer>
+
+<!-- 外部ヘッダーを読み込むスクリプト -->
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error:', error));
+</script>
+
+</body>
+</html>
