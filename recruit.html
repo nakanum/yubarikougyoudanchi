@@ -95,13 +95,23 @@
             text-decoration: underline;
         }
 
-        /* スマホ対応の調整 */
-        @media (max-width: 768px) {
-            .hero { padding: 80px 20px 100px; }
-            .container { padding: 30px 20px; margin-top: -50px; }
-            th, td { display: block; width: 100%; }
-            th { border-bottom: none; padding-bottom: 5px; }
+        .hero h1 {
+        font-size: 32px;
+        word-break: break-all; /* 単語の途中でも改行を許可してはみ出しを防ぐ */
+        line-height: 1.2;
+    }
+
+    /* スマホ（画面幅768px以下）での調整 */
+    @media (max-width: 768px) {
+        .hero h1 {
+            /* 画面幅に応じて文字サイズが変わる設定（おすすめ） */
+            /* 7vw = 画面幅の7%。これで画面に合わせて自動で縮小される */
+            font-size: 7vw !important; 
+            
+            /* もしサイズを微調整したいなら、上限・下限を決められるこれ↓ */
+            /* font-size: clamp(20px, 7vw, 32px) !important; */
         }
+    }
     </style>
 </head>
 <body>
