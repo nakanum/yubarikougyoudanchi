@@ -13,7 +13,10 @@
         body {
             margin: 0;
             background-color: #f4f4f4;
-            font-family: sans-serif;
+            /* 全体のフォントを標準の太さに固定 */
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            font-weight: normal; 
+            color: #333;
         }
 
         .hero {
@@ -36,7 +39,7 @@
             letter-spacing: 0.1em;
             margin: 0;
             line-height: 1.2;
-            word-break: break-all;
+            font-weight: normal; /* ここを標準の太さに */
         }
 
         .container {
@@ -45,7 +48,7 @@
             margin: -80px auto 60px;
             background: white;
             padding: 50px 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             border-radius: 4px;
             box-sizing: border-box;
             position: relative;
@@ -53,12 +56,12 @@
         }
 
         h2 {
-            font-size: 18px;
-            border-left: 5px solid #000;
-            padding-left: 15px;
-            margin-bottom: 25px;
+            font-size: 1.25rem;
+            border-bottom: 2px solid #1a1a1a; /* トップページのデザインに統一 */
+            padding-bottom: 10px;
+            margin-bottom: 30px;
             font-weight: bold;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.15em;
         }
 
         /* X埋め込みカード */
@@ -82,25 +85,26 @@
             display: inline-flex;
             align-items: center;
             text-decoration: none;
-            color: #333;
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid #333;
-            padding: 12px 24px;
+            color: #666; /* 少し色を落として圧迫感を軽減 */
+            font-size: 13px;
+            font-weight: normal; /* 太字を解除 */
+            border: 1px solid #ccc; /* 境界線も少し細く */
+            padding: 10px 20px;
             transition: all 0.3s ease;
             border-radius: 2px;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
         }
 
         .btn-ir::after {
             content: "→";
-            margin-left: 10px;
+            margin-left: 8px;
             transition: transform 0.3s ease;
         }
 
         .btn-ir:hover {
-            background-color: #000;
+            background-color: #1a1a1a;
             color: #fff;
+            border-color: #1a1a1a;
         }
 
         .btn-ir:hover::after {
@@ -125,6 +129,7 @@
             padding: 40px 20px;
             font-size: 11px;
             color: #999;
+            font-weight: normal;
         }
     </style>
 </head>
@@ -139,7 +144,7 @@
 
 <div class="container">
     <section class="audio-section">
-        <h2>次回稼働予定</h2>
+        <h2>NEXT OPERATIONS <span style="font-size: 0.6em; vertical-align: middle; color: #888;">[ 次回稼働予定 ]</span></h2>
         <div class="audio-card">
             <blockquote class="twitter-tweet" data-media-hidden="false" data-lang="ja">
                 <a href="https://x.com/YKD_DKY/status/2046549196183146863?s=20"></a>
