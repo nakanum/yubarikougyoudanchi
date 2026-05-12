@@ -101,7 +101,19 @@
             border-color: #007b43;
             color: #007b43;
         }
+/* ヒーローエリアの文字サイズをスマホで調整 */
+        .hero h1 {
+            font-size: 32px;
+            word-break: break-all;
+            line-height: 1.2;
+        }
 
+        @media (max-width: 768px) {
+            .hero h1 {
+                /* 画面幅に合わせて文字サイズを自動縮小 */
+                font-size: 7vw !important; 
+            }
+        }
     </style>
 </head>
 <body>
