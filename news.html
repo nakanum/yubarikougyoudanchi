@@ -136,19 +136,18 @@
 <div class="container" style="margin-top: 40px;">
     <section class="audio-section">
         <h2>Latest Information</h2>
-        <div class="audio-card" style="padding: 10px;">
-            <!-- X タイムライン埋め込み -->
-            <div class="x-embed-wrapper">
-                <a class="twitter-timeline" 
-                   data-height="600" 
-                   data-theme="light" 
-                   data-chrome="noheader nofooter noborders transparent"
-                   data-link-color="#007b43"
-                   href="https://twitter.com/YKD_DKY?ref_src=twsrc%5Etfw">
-                   Tweets by YKD_DKY
-                </a> 
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
+        <div class="audio-card" style="padding: 0; overflow: hidden; border-radius: 12px;">
+            <!-- この A タグが JS によってタイムラインに置き換わる -->
+            <a class="twitter-timeline" 
+               data-height="800" 
+               data-theme="light" 
+               data-chrome="noheader nofooter noborders" 
+               data-link-color="#007b43"
+               href="https://twitter.com/YKD_DKY?ref_src=twsrc%5Etfw">
+               通信中...
+            </a> 
+            <!-- このスクリプトが重要。これが TL を生成する -->
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
     </section>
 </div>
