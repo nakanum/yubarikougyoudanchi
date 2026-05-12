@@ -1,4 +1,8 @@
-/* --- 共通レイアウト --- */
+/* --- 1. 基本設定 --- */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     color: #333;
@@ -6,58 +10,49 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f7f4;
-    padding-top: 95px; /* ナビ2段分の余白 */
+    /* ヘッダー2段分(80px+45px)が被らないための余白 */
+    padding-top: 125px !important; 
 }
 
-/* --- 1段目：ブランドバー --- */
+/* --- 2. 1段目：ブランドバー（ロゴ） --- */
 .navbar {
-    position: fixed;
+    position: fixed !important; /* 絶対に固定 */
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
     background-color: #007b43;
-    color: white;
-    display: flex;
+    z-index: 2000;
+    /* 中身を中央に寄せるための設定 */
+    display: flex !important;
+    flex-direction: row; /* 横並びを強制 */
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
-    z-index: 1001;
-    position: relative;      /* 子要素の基準にする */
-    display: flex;
-    align-items: center;
-    height: 80px;            /* ナビの高さ */
-    padding: 0 20px;
 }
 
 .nav-logo {
-    height: 35px;
+    height: 40px; /* ロゴの大きさ */
     width: auto;
     display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* 完全に中心へ移動 */
-    height: 40px;
 }
 
-/* --- 2段目：サブナビゲーション --- */
+/* --- 3. 2段目：サブナビゲーション --- */
 .sub-navbar {
-    position: fixed;
-    top: 80px;
+    position: fixed !important;
+    top: 80px; /* 1段目のすぐ下 */
     left: 0;
     width: 100%;
     height: 45px;
     background-color: #ffffff;
     border-bottom: 1px solid #ddd;
-    display: flex;
-    align-items: center;
+    z-index: 1999;
+    display: flex !important;
+    flex-direction: row; /* 横並びを強制 */
     justify-content: center;
-    z-index: 1000;
+    align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    overflow-x: auto;
-    white-space: nowrap;
 }
 
 .sub-nav-list {
@@ -67,12 +62,16 @@ body {
     padding: 0;
 }
 
+.sub-nav-list li {
+    display: inline-block; /* 縦並びを防止 */
+}
+
 .sub-nav-list li a {
     text-decoration: none;
     color: #444;
     font-size: 11px;
-    font-weight: bold;
-    padding: 0 12px;
+    font-weight: normal; /* 太字解除 */
+    padding: 0 15px;
     display: block;
     line-height: 45px;
     transition: 0.3s;
@@ -83,19 +82,19 @@ body {
     color: #007b43;
 }
 
-/* --- コンテンツ要素 --- */
+/* --- 4. コンテンツ・ヒーローエリア --- */
+.hero h1 {
+    font-size: 32px !important;
+    font-weight: normal !important; /* 太字解除 */
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0;
+}
+
 .section {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
-}
-
-.section-title {
-    font-size: 20px;
-    border-left: 6px solid #000;
-    padding-left: 12px;
-    margin-bottom: 25px;
-    font-weight: bold;
 }
 
 footer {
@@ -104,25 +103,21 @@ footer {
     font-size: 11px;
     color: #999;
 }
-/* --- 全ページ共通：ヒーローエリアの文字サイズ調整 --- */
-/* style.css の一番最後に追加 */
-html {
-    -webkit-text-size-adjust: 100%;
-}
 
-.hero h1 {
-    font-size: 32px !important;
-    word-break: break-all !important;
-    display: block !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-}
-
+/* --- 5. スマホ対応 --- */
 @media (max-width: 768px) {
+    body {
+        padding-top: 125px !important;
+    }
+    .sub-navbar {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    .sub-nav-list {
+        padding: 0 10px;
+        white-space: nowrap;
+    }
     .hero h1 {
-        /* スマホでは画面幅に合わせて小さくする */
-        font-size: 7vw !important; 
-        padding: 0 20px !important;
-        box-sizing: border-box !important;
+        font-size: 7vw !important;
     }
 }
