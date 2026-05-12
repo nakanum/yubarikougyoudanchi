@@ -1,0 +1,119 @@
+/* --- 共通レイアウト --- */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: #333;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f4;
+    padding-top: 95px; /* ナビ2段分の余白 */
+}
+
+/* --- 1段目：ブランドバー --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #007b43;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1001;
+}
+
+.nav-logo {
+    height: 20px;
+    width: auto;
+    display: block;
+}
+
+.entry-group {
+    display: flex;
+    gap: 10px;
+}
+
+.entry-btn {
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 8px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+/* --- 2段目：サブナビゲーション --- */
+.sub-navbar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.sub-nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-nav-list li a {
+    text-decoration: none;
+    color: #444;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0 12px;
+    display: block;
+    line-height: 45px;
+    transition: 0.3s;
+}
+
+.sub-nav-list li a:hover {
+    background-color: #f0f0f0;
+    color: #007b43;
+}
+
+/* --- コンテンツ要素 --- */
+.section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 20px;
+    border-left: 6px solid #000;
+    padding-left: 12px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 11px;
+    color: #999;
+}
+
+/* デスクトップ用調整 */
+@media (min-width: 768px) {
+    .sub-nav-list li a { font-size: 13px; padding: 0 20px; }
+    .entry-btn { font-size: 13px; }
+}
