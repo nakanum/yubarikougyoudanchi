@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEWS / LOG | 夕張工業団地</title>
+    <title>夕張工業団地 稼働予定 | 2027-2028</title>
+    <!-- 設計図を読み込む -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 共通ヒーロースタイル（音源ページを継承） */
         .hero {
-            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%); /* ニュースは少し重めのトーン */
+            background: linear-gradient(135deg, #007b43 0%, #004d2c 100%);
             color: white;
-            padding: 100px 20px 140px;
+            padding: 60px 20px 30px;
             text-align: center;
         }
         .hero p {
@@ -25,103 +25,21 @@
             font-size: 32px;
             letter-spacing: 0.1em;
             margin: 0;
+        }  @media (max-width: 768px) {
+            .container { padding: 30px 20px; }
+            .hero h1 { font-size: 24px; }
         }
+    </style>
+</head>
+<body>
 
-        .container {
-            max-width: 900px;
-            width: 92%;
-            margin: -80px auto 60px;
-            background: white;
-            padding: 50px 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            border-radius: 4px;
-            box-sizing: border-box;
-            position: relative;
-            z-index: 10;
-        }
+    <div id="header-placeholder"></div>
 
-        h2 {
-            font-size: 18px;
-            border-left: 5px solid #000;
-            padding-left: 15px;
-            margin: 0 0 30px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<div class="hero">
+    <p>LIVE SCHEDULE/NEWS</p>
+    <h1>稼働予定/NEWS</h1>
+</div>
 
-        /* ニュース・レイアウト */
-        .news-grid {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 40px;
-        }
-
-        /* ログリスト（左側） */
-        .log-section {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .log-card {
-            border: 1px solid #eee;
-            padding: 20px;
-            text-decoration: none;
-            color: inherit;
-            transition: 0.2s;
-            display: block;
-        }
-        .log-card:hover {
-            border-color: #000;
-            background: #fafafa;
-            transform: translateX(5px);
-        }
-        .log-date {
-            font-family: monospace;
-            font-size: 13px;
-            color: #888;
-            margin-bottom: 8px;
-            display: block;
-        }
-        .log-card h3 {
-            font-size: 16px;
-            margin: 0 0 10px 0;
-        }
-        .log-card p {
-            font-size: 13px;
-            color: #666;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* X モニター（右側） */
-        .monitor-section {
-            position: sticky;
-            top: 20px;
-        }
-        .monitor-label {
-            font-size: 10px;
-            background: #000;
-            color: #fff;
-            padding: 3px 8px;
-            display: inline-block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        .x-wrapper {
-            border: 1px solid #eee;
-            padding: 10px;
-            background: #f9f9f9;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 12px;
-            color: #888;
-            border-top: 1px solid #eee;
-        }
 
         @media (max-width: 850px) {
             .news-grid { grid-template-columns: 1fr; }
