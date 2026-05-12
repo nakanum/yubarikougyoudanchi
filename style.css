@@ -1,4 +1,4 @@
-/* --- 1段目：ブランドバー --- */
+/* ロゴが巨大化するのを防ぎ、真ん中に固定 */
 .navbar {
     position: fixed !important;
     top: 0;
@@ -6,33 +6,43 @@
     width: 100%;
     height: 80px;
     background-color: #007b43;
-    color: white;
-    z-index: 1001;
-    /* justify-content: space-between を削除し、ロゴを中央に固定 */
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    padding: 0;
-    box-sizing: border-box;
+    z-index: 9999 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .nav-logo {
-    height: 40px; /* お好みの高さに */
-    width: auto;
-    display: block;
-    /* absoluteを使って画面の50%位置に強制固定 */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    height: 40px !important; /* ここでサイズを強制固定 */
+    width: auto !important;
+    max-width: 80% !important;
 }
 
-/* もし entry-btn が邪魔しているなら、右側に寄せておく */
-.entry-group {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 10px;
+/* メニューが箇条書きになるのを防ぐ */
+.sub-navbar {
+    position: fixed !important;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #ffffff;
+    z-index: 9998 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.sub-nav-list {
+    display: flex !important; /* 横並びを強制 */
+    list-style: none !important; /* ポッチを消す */
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 15px;
+}
+
+.sub-nav-list li a {
+    text-decoration: none !important; /* 下線を消す */
+    color: #444 !important;
+    font-size: 10px;
+    white-space: nowrap;
 }
