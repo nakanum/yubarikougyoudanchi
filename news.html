@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS / LOG | 夕張工業団地</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 共通ヒーロースタイル（音源ページを継承） */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%); /* ニュースは少し重めのトーン */
+            color: white;
+            padding: 100px 20px 140px;
+            text-align: center;
+        }
+        .hero p {
+            font-size: 12px;
+            letter-spacing: 0.3em;
+            font-weight: bold;
+            opacity: 0.8;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: 32px;
+            letter-spacing: 0.1em;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 92%;
+            margin: -80px auto 60px;
+            background: white;
+            padding: 50px 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 10;
+        }
+
+        h2 {
+            font-size: 18px;
+            border-left: 5px solid #000;
+            padding-left: 15px;
+            margin: 0 0 30px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ニュース・レイアウト */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 40px;
+        }
+
+        /* ログリスト（左側） */
+        .log-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .log-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+            display: block;
+        }
+        .log-card:hover {
+            border-color: #000;
+            background: #fafafa;
+            transform: translateX(5px);
+        }
+        .log-date {
+            font-family: monospace;
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .log-card h3 {
+            font-size: 16px;
+            margin: 0 0 10px 0;
+        }
+        .log-card p {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* X モニター（右側） */
+        .monitor-section {
+            position: sticky;
+            top: 20px;
+        }
+        .monitor-label {
+            font-size: 10px;
+            background: #000;
+            color: #fff;
+            padding: 3px 8px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .x-wrapper {
+            border: 1px solid #eee;
+            padding: 10px;
+            background: #f9f9f9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 12px;
+            color: #888;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 850px) {
+            .news-grid { grid-template-columns: 1fr; }
+            .monitor-section { position: static; margin-top: 40px; }
+            .container { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<div class="hero">
+    <p>Operation Log</p>
+    <h1>最新稼働情報</h1>
+</div>
+
+<div class="container">
+    <div class="news-grid">
+        <!-- メインログ -->
+        <section class="log-section">
+            <h2>LOG ARCHIVE</h2>
+            
+            <a href="#" class="log-card">
+                <span class="log-date">2026.06.02</span>
+                <h3>自主企画公演：実施計画を公開</h3>
+                <p>6月2日に開催予定の自主企画に関するタイムテーブルおよび、追加の「作業員」募集要項を公開しました。</p>
+            </a>
+
+            <a href="#" class="log-card">
+                <span class="log-date">2026.03.19</span>
+                <h3>Kichijoji WARP 公演完了</h3>
+                <p>Michael Cera Palin来日ツアーのサポート稼働が終了しました。多数のご来場ありがとうございました。</p>
+            </a>
+
+            <a href="#" class="log-card">
+                <span class="log-date">2026.03.01</span>
+                <h3>EP『縹色の夏』製品出荷開始</h3>
+                <p>新作音源（工業製品）のデジタル配信およびストリーミングを開始しました。</p>
+            </a>
+        </section>
+
+        <!-- X リアルタイムフィード -->
+        <aside class="monitor-section">
+            <span class="monitor-label">EXTERNAL_SIGNAL</span>
+            <div class="x-wrapper">
+                <a class="twitter-timeline" 
+                   data-height="500" 
+                   data-theme="light" 
+                   data-chrome="noheader nofooter noborders transparent"
+                   href="https://twitter.com/YKD_DKY?ref_src=twsrc%5Etfw">
+                   Receiving signal...
+                </a> 
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<footer>
+    © 2026 YUBARI INDUSTRIAL DISTRICT All Rights Reserved.
+</footer>
+
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error:', error));
+</script>
+</body>
+</html>
