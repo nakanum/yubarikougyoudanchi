@@ -10,6 +10,12 @@
         /* スマホの文字サイズ自動調整をリセット */
         html { -webkit-text-size-adjust: 100%; }
 
+        body {
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: sans-serif;
+        }
+
         .hero {
             background: linear-gradient(135deg, #007b43 0%, #004d2c 100%);
             color: white;
@@ -25,7 +31,6 @@
             text-transform: uppercase;
         }
         
-        /* PC/スマホ両対応のフォントサイズ設定 */
         .hero h1 {
             font-size: 32px;
             letter-spacing: 0.1em;
@@ -48,14 +53,15 @@
         }
 
         h2 {
-            font-size: 20px;
+            font-size: 18px;
             border-left: 5px solid #000;
             padding-left: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-weight: bold;
+            letter-spacing: 0.05em;
         }
 
-        /* X埋め込みカードの装飾 */
+        /* X埋め込みカード */
         .audio-card {
             background: #fff;
             padding: 10px;
@@ -63,21 +69,67 @@
             border: 1px solid #eee;
             display: flex;
             justify-content: center;
+            margin-bottom: 30px;
         }
 
-        /* スマホ用（Recruitに合わせた挙動） */
+        /* 過去実績への誘導ボタン */
+        .ir-link-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .btn-ir {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #333;
+            padding: 12px 24px;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            letter-spacing: 0.1em;
+        }
+
+        .btn-ir::after {
+            content: "→";
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-ir:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .btn-ir:hover::after {
+            transform: translateX(5px);
+        }
+
         @media (max-width: 768px) {
             .container { padding: 30px 20px; }
             .hero h1 { 
-                /* 画面幅に合わせて縮小、最大32px/最小20px */
                 font-size: clamp(20px, 7vw, 32px) !important; 
             }
+            .ir-link-container {
+                text-align: center;
+            }
+            .btn-ir {
+                display: block;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 11px;
+            color: #999;
         }
     </style>
 </head>
 <body>
 
-<!-- ヘッダーの差し込み口 -->
 <div id="header-placeholder"></div>
 
 <div class="hero">
@@ -89,12 +141,15 @@
     <section class="audio-section">
         <h2>次回稼働予定</h2>
         <div class="audio-card">
-            <!-- X 個別ポスト埋め込みここから（URLを任意のポストに貼り替えて） -->
             <blockquote class="twitter-tweet" data-media-hidden="false" data-lang="ja">
                 <a href="https://x.com/YKD_DKY/status/2046549196183146863?s=20"></a>
             </blockquote>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            <!-- X 個別ポスト埋め込みここまで -->
+        </div>
+
+        <!-- 過去実績へのリダイレクトリンク -->
+        <div class="ir-link-container">
+            <a href="ir.html" class="btn-ir">過去の稼働実績はこちら</a>
         </div>
     </section>
 </div>
