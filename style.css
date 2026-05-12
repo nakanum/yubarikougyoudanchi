@@ -111,20 +111,30 @@ footer {
     font-size: 11px;
     color: #999;
 }
+/* --- 全ページ共通：ヒーローエリアの文字サイズ調整 --- */
 
-/* 1. スマホの自動サイズ調整を無効化 */
+/* スマホの自動調整をリセット */
 html {
     -webkit-text-size-adjust: 100%;
 }
 
-/* 2. PCでのサイズ指定 */
+/* PC：基本は32px */
 .hero h1 {
-    font-size: 32px !important; /* !importantで強制適用 */
+    font-size: 32px;
+    line-height: 1.3;
+    word-break: break-all;
+    margin: 0;
 }
 
-/* 3. スマホ表示（画面幅768px以下）での上書きを防止 */
+/* スマホ：画面幅に合わせて自動縮小（はみ出し防止） */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 32px !important; /* スマホでも24pxに落とさず32pxを維持 */
+        /* clamp(最小値, 画面幅に比例した値, 最大値) */
+        font-size: clamp(20px, 8vw, 32px) !important;
+        padding: 0 5%; /* 左右に少し余裕を持たせる */
+    }
+    
+    .hero {
+        padding: 80px 10px 100px !important; /* スマホでは上下の余白も少し詰める */
     }
 }
