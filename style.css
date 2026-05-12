@@ -1,4 +1,8 @@
 /* --- 共通レイアウト --- */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     color: #333;
@@ -6,53 +10,51 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f7f4;
-    /* ナビ2段分（80px + 45px）以上の余白が必要 */
-    padding-top: 135px; 
+    /* 1段目(80px) + 2段目(45px) = 125px。中身が隠れないよう余白を固定 */
+    padding-top: 125px !important;
 }
 
-/* --- 1段目：ブランドバー --- */
+/* --- 1段目：ブランドバー (ロゴ) --- */
 .navbar {
-    position: fixed; /* 固定に戻す */
-    top: 0;
+    position: fixed !important;
+    top: 0 !important;
     left: 0;
     width: 100%;
     height: 80px;
     background-color: #007b43;
     color: white;
+    z-index: 2000; /* 最前面に固定 */
     display: flex;
     align-items: center;
-    justify-content: center; /* 中身を中央寄せ */
-    padding: 0 20px;
+    justify-content: center;
     box-sizing: border-box;
-    z-index: 1001;
 }
 
 .nav-logo {
-    height: 40px; /* サイズ固定 */
+    height: 40px;
     width: auto;
     display: block;
-    /* absoluteを使わなくても親のflexで中央に来るが、
-       もし他の要素を置くなら以下の absolute が確実 */
+    /* 他に要素が増えても常に真ん中に置く設定 */
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* --- 2段目：サブナビゲーション --- */
+/* --- 2段目：サブナビゲーション (メニュー) --- */
 .sub-navbar {
-    position: fixed;
-    top: 80px; /* 1段目の高さ分下げる */
+    position: fixed !important;
+    top: 80px !important; /* 1段目の真下に配置 */
     left: 0;
     width: 100%;
     height: 45px;
     background-color: #ffffff;
     border-bottom: 1px solid #ddd;
+    z-index: 1999;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .sub-nav-list {
@@ -66,7 +68,7 @@ body {
     text-decoration: none;
     color: #444;
     font-size: 12px;
-    font-weight: normal; /* 太字を解除 */
+    font-weight: normal; /* 太字解除 */
     padding: 0 15px;
     display: block;
     line-height: 45px;
@@ -78,26 +80,50 @@ body {
     color: #007b43;
 }
 
-/* --- ヒーローエリア（各ページのタイトル部分） --- */
+/* --- コンテンツ要素 --- */
+.section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* ヒーローエリアの文字太さ調整 */
 .hero h1 {
     font-size: 32px !important;
-    font-weight: normal !important; /* ここも太字を解除 */
+    font-weight: normal !important; /* 太字解除 */
     letter-spacing: 0.1em;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 11px;
+    color: #999;
 }
 
 /* --- スマホ対応 --- */
 @media (max-width: 768px) {
     body {
-        padding-top: 125px; /* スマホ用に微調整 */
+        padding-top: 125px !important;
+    }
+    .sub-navbar {
+        overflow-x: auto; /* メニューが多い場合に横スクロール可能に */
+        justify-content: flex-start;
     }
     .sub-nav-list {
-        overflow-x: auto; /* はみ出す場合は横スクロール */
-        width: 100%;
-        justify-content: flex-start;
         padding: 0 10px;
     }
-    .sub-nav-list li a {
-        padding: 0 10px;
-        font-size: 11px;
+    .hero h1 {
+        font-size: 7vw !important;
     }
 }
