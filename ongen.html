@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>採用情報</br>
-    音源 | 夕張工業団地</title>
+    <title>音源情報 | 夕張工業団地</title>
     <!-- 外部CSSを読み込む -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ヒーローエリア：共通のbody padding-topを考慮しつつ背景を設定 */
         .hero {
             background: linear-gradient(135deg, #007b43 0%, #004d2c 100%);
             color: white;
-            padding: 100px 20px 140px; /* 下に余裕を持たせて重ねる準備 */
+            padding: 100px 20px 140px;
             text-align: center;
         }
         .hero p {
@@ -29,11 +27,10 @@
             margin: 0;
         }
 
-        /* 白い箱：ヒーローに重ねる */
         .container {
             max-width: 800px;
             width: 92%;
-            margin: -80px auto 60px; /* ここで上に持ち上げて重ねる */
+            margin: -80px auto 60px;
             background: white;
             padding: 50px 40px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
@@ -47,157 +44,119 @@
             font-size: 20px;
             border-left: 5px solid #000;
             padding-left: 15px;
-            margin: 40px 0 25px;
+            margin: 40px 0 20px;
             font-weight: bold;
-            letter-spacing: 0.05em;
         }
-        h2:first-of-type { margin-top: 0; }
 
-        /* テーブル設定 */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
+        /* プレイヤー埋め込みエリアの装飾 */
+        .audio-section {
+            margin-bottom: 40px;
         }
-        th {
-            width: 30%;
+        .audio-card {
             background: #f9f9f9;
-            text-align: left;
             padding: 20px;
-            font-size: 14px;
-            border-bottom: 1px solid #eee;
-            color: #666;
-        }
-        td {
-            padding: 20px;
-            font-size: 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .point-list {
-            padding-left: 18px;
-            margin: 0;
-            list-style-type: square;
-        }
-
-        /* 応募セクション（apply-box）の追加 */
-        .apply-box {
-            background: #f0f4f0;
-            padding: 35px;
             border-radius: 4px;
-            border: 1px dashed #007b43;
-            margin-top: 40px;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
         }
-        .apply-box p { margin: 8px 0; }
-        .email {
-            font-weight: bold;
+        .audio-card h3 {
+            font-size: 14px;
+            margin: 0 0 15px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .audio-card h3::before {
+            content: "▶";
+            font-size: 10px;
             color: #007b43;
-            text-decoration: underline;
         }
 
-        /* スマホ対応の調整 */
+        /* 埋め込みプレイヤーのレスポンシブ対応 */
+        iframe {
+            width: 100%;
+            border-radius: 12px;
+            border: none;
+        }
+
+        /* 配信サイトリンクボタン */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .platform-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        .platform-link:hover {
+            background: #f0f0f0;
+            border-color: #007b43;
+            color: #007b43;
+        }
+
         @media (max-width: 768px) {
-            .hero { padding: 80px 20px 100px; }
-            .container { padding: 30px 20px; margin-top: -50px; }
-            th, td { display: block; width: 100%; }
-            th { border-bottom: none; padding-bottom: 5px; }
+            .container { padding: 30px 20px; }
+            .hero h1 { font-size: 24px; }
         }
     </style>
 </head>
 <body>
 
-<!-- ヘッダーの差し込み口 -->
 <div id="header-placeholder"></div>
 
 <div class="hero">
-    <p>Member Recruiting</p>
-    <h1>新規作業員 募集要項</h1>
+    <p>Audio Archive</p>
+    <h1>音源・配信情報</h1>
 </div>
 
 <div class="container">
-    <h2>1. 職種と業務内容</h2>
-    <table>
-        <tbody>
-            <tr>
-                <th>募集職種</th>
-                <td>ベース（正規作業員）/ ドラム（サポート作業員）</td>
-            </tr>
-            <tr>
-                <th>業務内容</th>
-                <td>
-                    <ul class="point-list">
-                        <li>既存パートの完全コピーおよび演奏</li>
-                        <li>パート制作、レコーディング（ベースのみ）</li>
-                        <li>ライブ・リハーサルへの参加</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <section class="audio-section">
+        <h2>SoundCloud (Demo & Works)</h2>
+        <div class="audio-card">
+            <h3>Latest Demo</h3>
+            <!-- SoundCloud 埋め込み (URLから生成したコードに貼り替え可能) -->
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/924088991&color=%23007b43&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        </div>
+    </section>
 
-    <h2>2. 応募資格</h2>
-    <table>
-        <tbody>
-            <tr>
-                <th>必須条件</th>
-                <td>
-                    <ul class="point-list">
-                        <li>安定した力強い演奏</li>
-                        <li>ツインペダル、楽曲に対応可能な操作スキル(ドラム)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>歓迎条件</th>
-                <td>
-                    <ul class="point-list">
-                        <li>DAW操作/作曲経験(ベース)</li>
-                        <li>チャイナシンバルの使用経験(ドラム)</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <section class="audio-section">
+        <h2>Streaming Services</h2>
+        <div class="audio-card">
+            <h3>Spotify Artist Page</h3>
+            <!-- Spotify 埋め込み -->
+            <iframe src="https://open.spotify.com/embed/artist/1HwXj1S3hwMTeu5P05A6lG?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
 
-    <h2>3. 労働条件・待遇</h2>
-    <table>
-        <tbody>
-            <tr>
-                <th>契約期間</th>
-                <td>2026年7月頃 〜 無期（ベース）/ 2026年9月頃 〜 ドラムメンバー復帰まで</td>
-            </tr>
-            <tr>
-                <th>勤務地</th>
-                <td>高田馬場（スタジオ）、各ライブハウス</td>
-            </tr>
-            <tr>
-                <th>待遇</th>
-                <td>
-                    <ul class="point-list">
-                        <li>給与：能力考慮のうえ、応相談</li>
-                        <li>制服貸与</li>
-                        <li>譜面支給</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="link-grid">
+            <a href="https://open.spotify.com/intl-ja/artist/1HwXj1S3hwMTeu5P05A6lG" class="platform-link" target="_blank">Spotify</a>
+            <a href="https://music.apple.com/jp/artist/%E5%A4%95%E5%BC%B5%E5%B7%A5%E6%A5%AD%E5%9B%A3%E5%9C%B0/1865645825" class="platform-link" target="_blank">Apple Music</a>
+            <a href="https://soundcloud.com/h-m-924088991" class="platform-link" target="_blank">SoundCloud</a>
+        </div>
+    </section>
 
-    <h2>4. 応募方法</h2>
-    <div style="padding: 10px 15px;">
-        <p>メールにて下記5点を送付してください。</p>
-        <p>1. 名前(ニックネーム可能) / 2. 年齢 / 3. 居住エリア / 4. 音楽経歴 / 5. 演奏動画URL</p>
-        <p style="margin-top: 15px;">
-            連絡先：<a href="mailto:ykdband@gmail.com" class="email">ykdband@gmail.com</a>
-        </p>
-    </div>
+    <h2>IR（活動報告・実績）</h2>
+    <p style="font-size: 14px; color: #666; padding: 0 15px;">
+        Zepp Shinjukuでのパフォーマンスをはじめとした、過去の主要な活動実績や制作データについてはIRページにて公開予定。
+    </p>
 </div>
 
 <footer>
     © 2026 YUBARI INDUSTRIAL DISTRICT All Rights Reserved.
 </footer>
 
-<!-- 外部ヘッダーを読み込むスクリプト -->
 <script>
     fetch('header.html')
         .then(response => response.text())
