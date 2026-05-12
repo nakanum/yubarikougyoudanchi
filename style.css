@@ -24,12 +24,22 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 1001;
+    position: relative;      /* 子要素の基準にする */
+    display: flex;
+    align-items: center;
+    height: 80px;            /* ナビの高さ */
+    padding: 0 20px;
 }
 
 .nav-logo {
     height: 35px;
     width: auto;
     display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* 完全に中心へ移動 */
+    height: 40px;
 }
 
 /* --- 2段目：サブナビゲーション --- */
