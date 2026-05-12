@@ -117,3 +117,7 @@ footer {
     .sub-nav-list li a { font-size: 13px; padding: 0 20px; }
     .entry-btn { font-size: 13px; }
 }
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
