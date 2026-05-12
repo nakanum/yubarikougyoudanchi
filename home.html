@@ -15,7 +15,7 @@
             padding-top: 95px;
         }
 
-        /* 1段目: Navbar */
+     /* Fixed Navigation Bar (1段目) */
         .navbar {
             position: fixed;
             top: 0;
@@ -32,21 +32,21 @@
             z-index: 1001;
         }
 
-        /* 2段目: Sub Navbar */
+        /* Sub Navigation Bar (2段目) */
         .sub-navbar {
             position: fixed;
-            top: 50px;
+            top: 50px; /* 1段目の高さ分下げる */
             left: 0;
             width: 100%;
             height: 45px;
             background-color: #ffffff;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            overflow-x: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow-x: auto; /* スマホで横スクロール可能に */
             white-space: nowrap;
         }
 
@@ -59,46 +59,42 @@
 
         .sub-nav-list li a {
             text-decoration: none;
-            color: #555;
+            color: #444;
             font-size: 11px;
             font-weight: bold;
-            padding: 0 15px;
+            padding: 0 12px;
             display: block;
             line-height: 45px;
-            transition: 0.2s;
-            letter-spacing: 0.05em;
+            transition: color 0.3s, background-color 0.3s;
         }
 
         .sub-nav-list li a:hover {
+            background-color: #f0f0f0;
             color: #007b43;
-            background-color: #f9f9f9;
         }
 
         .nav-logo {
-            height: 18px;
+            height: 20px;
             width: auto;
+            display: block;
         }
 
+        /* Entry Buttons */
         .entry-group {
             display: flex;
-            gap: 8px;
+            gap: 10px;
         }
 
         .entry-btn {
             background-color: #000;
             color: white;
             text-decoration: none;
-            padding: 4px 12px;
+            padding: 5px 10px;
             border-radius: 2px;
             font-weight: bold;
-            font-size: 10px;
-            transition: 0.3s;
-            border: 1px solid #000;
-        }
-
-        .entry-btn:hover {
-            background-color: transparent;
-            color: #000;
+            font-size: 8px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
         }
 
         /* Main Visual (Hero) */
