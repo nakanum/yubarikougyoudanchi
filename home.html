@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夕張工業団地 採用ポータルサイト | 2027-2028</title>
+    <style>
+        /* 共通スタイルは募集要項ページと統一 */
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            color: #333;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f4;
+            padding-top: 95px;
+        }
+
+        /* Fixed Navigation */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 50px; background-color: #007b43; color: white; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; box-sizing: border-box; z-index: 1001; }
+        .sub-navbar { position: fixed; top: 50px; left: 0; width: 100%; height: 45px; background-color: #ffffff; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); overflow-x: auto; white-space: nowrap; }
+        .sub-nav-list { display: flex; list-style: none; margin: 0; padding: 0; }
+        .sub-nav-list li a { text-decoration: none; color: #444; font-size: 13px; font-weight: bold; padding: 0 20px; display: block; line-height: 45px; transition: 0.3s; }
+        .sub-nav-list li a:hover { color: #007b43; }
+        .nav-logo { height: 20px; width: auto; }
+        .entry-group { display: flex; gap: 10px; }
+        .entry-btn { background-color: #000; color: white; text-decoration: none; padding: 5px 10px; border-radius: 2px; font-weight: bold; font-size: 13px; }
+
+        /* Home Specific: Hero Section */
+        .main-visual {
+            background-color: #007b43;
+            background-image: url('https://lh3.googleusercontent.com/d/1uk5KbWNKLEvGzrEj_hkJ2Itcagl5uRla'); /* 背景に薄くロゴを置く等の加工を想定 */
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .main-visual::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 123, 67, 0.7); /* コーポレートカラーのオーバーレイ */
+        }
+        .visual-content {
+            position: relative;
+            z-index: 10;
+        }
+        .visual-content h1 {
+            font-size: 42px;
+            margin: 0;
+            letter-spacing: 0.15em;
+            font-weight: 900;
+        }
+        .visual-content p {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Section Styling */
+        .section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0; left: 50%; width: 50px; height: 3px;
+            background: #007b43;
+            transform: translateX(-50%);
+        }
+
+        /* Info Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+            border-top: 4px solid #007b43;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #007b43;
+        }
+
+        footer { text-align: center; padding: 40px; font-size: 11px; color: #999; border-top: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html"><img src="https://lh3.googleusercontent.com/d/1uk5KbWNKLEvGzrEj_hkJ2Itcagl5uRla" alt="株式会社夕張工業団地" class="nav-logo"></a>
+    <div class="entry-group">
+        <a href="mailto:ykdband@gmail.com" class="entry-btn">2027 ENTRY</a>
+        <a href="mailto:ykdband@gmail.com" class="entry-btn">2028 ENTRY</a>
+    </div>
+</nav>
+
+<nav class="sub-navbar">
+    <ul class="sub-nav-list">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="index.html">採用情報</a></li> <!-- さっき作ったページへ -->
+        <li><a href="#">音源</a></li>
+        <li><a href="#">関連製品</a></li>
+        <li><a href="#">IR（活動報告）</a></li>
+        <li><a href="#">各種リンク</a></li>
+    </ul>
+</nav>
+
+<header class="main-visual">
+    <div class="visual-content">
+        <p>RECRUITING 2027-2028</p>
+        <h1>鳴らせ、産業の鼓動。</h1>
+    </div>
+</header>
+
+<section class="section">
+    <h2 class="section-title">MESSAGE</h2>
+    <div style="background: white; padding: 40px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0;">「無機質な音に、有機的な魂を。」</h3>
+        <p>夕張工業団地は、90年代の工業的景観と現代の電子音響を融合させる独自の「製造ライン」を展開しています。私たちが求めているのは、単なる演奏者ではありません。音楽という無機質な構造体に、自らの技術という火を灯す「作業員」です。</p>
+        <p>変革の時代において、共に新たな産業の音を創り上げましょう。</p>
+        <p style="text-align: right; font-weight: bold;">代表作業員・村松隼成</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">CONTENTS</h2>
+    <div class="grid">
+        <a href="index.html" class="card">
+            <h3>採用情報 / RECRUIT</h3>
+            <p>ベース・ドラム部門の募集要項はこちら。あなたのスキルセットを当組織で活かしてください。</p>
+        </a>
+        <a href="#" class="card">
+            <h3>製品ラインナップ / PRODUCTS</h3>
+            <p>夕張工業団地がリリースした「音源」という名の工業製品群を紹介します。</p>
+        </a>
+        <a href="#" class="card">
+            <h3>IR情報 / INVESTORS</h3>
+            <p>ライブパフォーマンスを通じた活動報告と、今後の事業計画について。株主（リスナー）の皆様へ。</p>
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2026 YUBARI INDUSTRIAL DISTRICT All Rights Reserved.
+</footer>
+
+</body>
+</html>
