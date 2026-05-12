@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>採用情報</br>
+    音源 | 夕張工業団地</title>
+    <!-- 外部CSSを読み込む -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ヒーローエリア：共通のbody padding-topを考慮しつつ背景を設定 */
+        .hero {
+            background: linear-gradient(135deg, #007b43 0%, #004d2c 100%);
+            color: white;
+            padding: 100px 20px 140px; /* 下に余裕を持たせて重ねる準備 */
+            text-align: center;
+        }
+        .hero p {
+            font-size: 12px;
+            letter-spacing: 0.3em;
+            font-weight: bold;
+            opacity: 0.8;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: 32px;
+            letter-spacing: 0.1em;
+            margin: 0;
+        }
+
+        /* 白い箱：ヒーローに重ねる */
+        .container {
+            max-width: 800px;
+            width: 92%;
+            margin: -80px auto 60px; /* ここで上に持ち上げて重ねる */
+            background: white;
+            padding: 50px 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 10;
+        }
+
+        h2 {
+            font-size: 20px;
+            border-left: 5px solid #000;
+            padding-left: 15px;
+            margin: 40px 0 25px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        h2:first-of-type { margin-top: 0; }
+
+        /* テーブル設定 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th {
+            width: 30%;
+            background: #f9f9f9;
+            text-align: left;
+            padding: 20px;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+        td {
+            padding: 20px;
+            font-size: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .point-list {
+            padding-left: 18px;
+            margin: 0;
+            list-style-type: square;
+        }
+
+        /* 応募セクション（apply-box）の追加 */
+        .apply-box {
+            background: #f0f4f0;
+            padding: 35px;
+            border-radius: 4px;
+            border: 1px dashed #007b43;
+            margin-top: 40px;
+        }
+        .apply-box p { margin: 8px 0; }
+        .email {
+            font-weight: bold;
+            color: #007b43;
+            text-decoration: underline;
+        }
+
+        /* スマホ対応の調整 */
+        @media (max-width: 768px) {
+            .hero { padding: 80px 20px 100px; }
+            .container { padding: 30px 20px; margin-top: -50px; }
+            th, td { display: block; width: 100%; }
+            th { border-bottom: none; padding-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ヘッダーの差し込み口 -->
+<div id="header-placeholder"></div>
+
+<div class="hero">
+    <p>Member Recruiting</p>
+    <h1>新規作業員 募集要項</h1>
+</div>
+
+<div class="container">
+    <h2>1. 職種と業務内容</h2>
+    <table>
+        <tbody>
+            <tr>
+                <th>募集職種</th>
+                <td>ベース（正規作業員）/ ドラム（サポート作業員）</td>
+            </tr>
+            <tr>
+                <th>業務内容</th>
+                <td>
+                    <ul class="point-list">
+                        <li>既存パートの完全コピーおよび演奏</li>
+                        <li>パート制作、レコーディング（ベースのみ）</li>
+                        <li>ライブ・リハーサルへの参加</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. 応募資格</h2>
+    <table>
+        <tbody>
+            <tr>
+                <th>必須条件</th>
+                <td>
+                    <ul class="point-list">
+                        <li>安定した力強い演奏</li>
+                        <li>ツインペダル、楽曲に対応可能な操作スキル(ドラム)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>歓迎条件</th>
+                <td>
+                    <ul class="point-list">
+                        <li>DAW操作/作曲経験(ベース)</li>
+                        <li>チャイナシンバルの使用経験(ドラム)</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. 労働条件・待遇</h2>
+    <table>
+        <tbody>
+            <tr>
+                <th>契約期間</th>
+                <td>2026年7月頃 〜 無期（ベース）/ 2026年9月頃 〜 ドラムメンバー復帰まで</td>
+            </tr>
+            <tr>
+                <th>勤務地</th>
+                <td>高田馬場（スタジオ）、各ライブハウス</td>
+            </tr>
+            <tr>
+                <th>待遇</th>
+                <td>
+                    <ul class="point-list">
+                        <li>給与：能力考慮のうえ、応相談</li>
+                        <li>制服貸与</li>
+                        <li>譜面支給</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. 応募方法</h2>
+    <div style="padding: 10px 15px;">
+        <p>メールにて下記5点を送付してください。</p>
+        <p>1. 名前(ニックネーム可能) / 2. 年齢 / 3. 居住エリア / 4. 音楽経歴 / 5. 演奏動画URL</p>
+        <p style="margin-top: 15px;">
+            連絡先：<a href="mailto:ykdband@gmail.com" class="email">ykdband@gmail.com</a>
+        </p>
+    </div>
+</div>
+
+<footer>
+    © 2026 YUBARI INDUSTRIAL DISTRICT All Rights Reserved.
+</footer>
+
+<!-- 外部ヘッダーを読み込むスクリプト -->
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error:', error));
+</script>
+
+</body>
+</html>
