@@ -112,12 +112,19 @@ footer {
     color: #999;
 }
 
-/* デスクトップ用調整 */
-@media (min-width: 768px) {
-    .sub-nav-list li a { font-size: 13px; padding: 0 20px; }
-    .entry-btn { font-size: 13px; }
-}
-
+/* 1. スマホの自動サイズ調整を無効化 */
 html {
     -webkit-text-size-adjust: 100%;
+}
+
+/* 2. PCでのサイズ指定 */
+.hero h1 {
+    font-size: 32px !important; /* !importantで強制適用 */
+}
+
+/* 3. スマホ表示（画面幅768px以下）での上書きを防止 */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px !important; /* スマホでも24pxに落とさず32pxを維持 */
+    }
 }
