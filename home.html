@@ -11,12 +11,11 @@
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f4;
-            /* ナビが2段になったので余白を調整 (50px + 45px = 95px) */
+            background-color: #f8faf8;
             padding-top: 95px;
         }
 
-        /* Fixed Navigation Bar (1段目) */
+        /* 1段目: Navbar */
         .navbar {
             position: fixed;
             top: 0;
@@ -33,21 +32,21 @@
             z-index: 1001;
         }
 
-        /* Sub Navigation Bar (2段目) */
+        /* 2段目: Sub Navbar */
         .sub-navbar {
             position: fixed;
-            top: 50px; /* 1段目の高さ分下げる */
+            top: 50px;
             left: 0;
             width: 100%;
             height: 45px;
             background-color: #ffffff;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #eee;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            overflow-x: auto; /* スマホで横スクロール可能に */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow-x: auto;
             white-space: nowrap;
         }
 
@@ -60,167 +59,189 @@
 
         .sub-nav-list li a {
             text-decoration: none;
-            color: #444;
+            color: #555;
             font-size: 11px;
             font-weight: bold;
-            padding: 0 12px;
+            padding: 0 15px;
             display: block;
             line-height: 45px;
-            transition: color 0.3s, background-color 0.3s;
+            transition: 0.2s;
+            letter-spacing: 0.05em;
         }
 
         .sub-nav-list li a:hover {
-            background-color: #f0f0f0;
             color: #007b43;
+            background-color: #f9f9f9;
         }
 
         .nav-logo {
-            height: 20px;
+            height: 18px;
             width: auto;
-            display: block;
         }
 
-        /* Entry Buttons */
         .entry-group {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .entry-btn {
             background-color: #000;
             color: white;
             text-decoration: none;
-            padding: 5px 10px;
+            padding: 4px 12px;
             border-radius: 2px;
             font-weight: bold;
-            font-size: 8px;
-            transition: background-color 0.3s;
-            white-space: nowrap;
+            font-size: 10px;
+            transition: 0.3s;
+            border: 1px solid #000;
         }
 
-        /* Hero Section */
-        .hero {
-            background-color: #007b43; 
-            background-image: linear-gradient(135deg, #007b43 0%, #004d2c 100%);
-            color: white;
-            padding: 60px 20px 80px 20px;
-            text-align: center;
-        }
-        .hero p {
-            font-size: 12px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-weight: bold;
-        }
-        .hero h1 {
-            font-size: 24px;
-            margin: 0;
-            letter-spacing: 0.1em;
-            line-height: 1.4;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 720px;
-            width: 92%;
-            margin: -40px auto 40px auto;
-            background: white;
-            padding: 30px 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        h2 {
-            font-size: 18px;
-            border-left: 6px solid #000;
-            padding-left: 12px;
-            margin-bottom: 20px;
-            margin-top: 30px;
+        .entry-btn:hover {
+            background-color: transparent;
             color: #000;
         }
-        h2:first-of-type { margin-top: 0; }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        
-        th, td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            font-size: 14px;
-            vertical-align: middle;
-            box-sizing: border-box;
-        }
-        
-        th {
-            display: block;
-            width: 100%;
-            background-color: #f8f8f8;
-            font-weight: bold;
-            color: #444;
-            border-bottom: none;
-            padding-bottom: 10px;
-            text-align: left;
+
+        /* Main Visual (Hero) */
+        .main-visual {
+            background: linear-gradient(135deg, #007b43 0%, #004d2c 100%);
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
         }
 
-        td {
-            display: block;
-            width: 100%;
-            padding-top: 10px;
-            padding-bottom: 20px;
+        .visual-content p {
+            font-size: 12px;
+            letter-spacing: 0.3em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            opacity: 0.9;
         }
-        
-        .point-list {
-            padding-left: 18px;
+
+        .visual-content h1 {
+            font-size: 28px;
             margin: 0;
-            list-style-type: square;
+            letter-spacing: 0.15em;
+            line-height: 1.5;
+            font-weight: 700;
         }
 
-        .email {
-            font-weight: bold;
+        /* Sections */
+        .section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            letter-spacing: 0.1em;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 30px;
+            height: 3px;
+            background: #007b43;
+            transform: translateX(-50%);
+        }
+
+        /* Message Box */
+        .message-box {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+        }
+
+        .message-box h3 {
+            margin-top: 0;
             color: #007b43;
-            word-break: break-all;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* Contents Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            text-decoration: none;
+            color: inherit;
+            border-top: 5px solid #007b43;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 60px 20px;
             font-size: 11px;
-            color: #999;
+            color: #aaa;
+            background: #fff;
+            margin-top: 80px;
+            border-top: 1px solid #eee;
         }
 
-        /* Desktop Adjustments */
+        /* Mobile Adjustments */
+        @media (max-width: 767px) {
+            .main-visual { height: 240px; }
+            .visual-content h1 { font-size: 20px; }
+            .message-box { padding: 30px 20px; }
+            .section { margin: 40px auto; }
+        }
+
         @media (min-width: 768px) {
-            .navbar { padding: 0 40px; }
-            .sub-nav-list li a { font-size: 13px; padding: 0 20px; }
-            .hero h1 { font-size: 32px; }
-            .container { padding: 50px; margin-top: -60px; }
-            h2 { font-size: 22px; }
-            
-            th, td { 
-                display: table-cell; 
-                border-bottom: 1px solid #eee;
-            }
-            th { 
-                width: 30%; 
-                padding: 20px 15px;
-            }
-            td {
-                padding: 20px 15px;
-            }
-            .entry-btn { font-size: 13px; }
+            .navbar { padding: 0 60px; }
+            .sub-nav-list li a { font-size: 13px; padding: 0 25px; }
+            .visual-content h1 { font-size: 40px; }
+            .section-title { font-size: 24px; }
         }
     </style>
 </head>
 <body>
 
-<!-- 1段目：ロゴとエントリー -->
+<!-- 1段目：ブランドバー -->
 <nav class="navbar">
-    <img src="https://lh3.googleusercontent.com/d/1uk5KbWNKLEvGzrEj_hkJ2Itcagl5uRla" alt="株式会社夕張工業団地" class="nav-logo">
+    <a href="home.html">
+        <img src="https://lh3.googleusercontent.com/d/1uk5KbWNKLEvGzrEj_hkJ2Itcagl5uRla" alt="夕張工業団地" class="nav-logo">
+    </a>
     
     <div class="entry-group">
         <a href="mailto:ykdband@gmail.com" class="entry-btn">2027 ENTRY</a>
@@ -228,14 +249,14 @@
     </div>
 </nav>
 
-<!-- 2段目：メニュー項目 -->
+<!-- 2段目：グローバルメニュー -->
 <nav class="sub-navbar">
     <ul class="sub-nav-list">
         <li><a href="home.html">HOME</a></li>
         <li><a href="index.html">採用情報</a></li>
-        <li><a href="ongen.html">音源</a></li>
+        <li><a href="ongen.html">音源製品</a></li>
         <li><a href="#">関連製品</a></li>
-        <li><a href="#">IR（活動報告）</a></li>
+        <li><a href="#">IR・活動報告</a></li>
         <li><a href="#">各種リンク</a></li>
     </ul>
 </nav>
@@ -248,12 +269,12 @@
 </header>
 
 <section class="section">
-    <h2 class="section-title">MESSAGE</h2>
-    <div style="background: white; padding: 40px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <h3 style="margin-top: 0;">「無機質な音に、有機的な魂を。」</h3>
+    <h2 class="section-title">TOP MESSAGE</h2>
+    <div class="message-box">
+        <h3>「無機質な音に、有機的な魂を。」</h3>
         <p>夕張工業団地は、90年代の工業的景観と現代の電子音響を融合させる独自の「製造ライン」を展開しています。私たちが求めているのは、単なる演奏者ではありません。音楽という無機質な構造体に、自らの技術という火を灯す「作業員」です。</p>
         <p>変革の時代において、共に新たな産業の音を創り上げましょう。</p>
-        <p style="text-align: right; font-weight: bold;">代表作業員・村松隼成</p>
+        <p style="text-align: right; font-weight: bold; margin-top: 30px;">代表作業員・村松隼成</p>
     </div>
 </section>
 
@@ -261,16 +282,16 @@
     <h2 class="section-title">CONTENTS</h2>
     <div class="grid">
         <a href="index.html" class="card">
-            <h3>採用情報 / RECRUIT</h3>
-            <p>ベース・ドラム部門の募集要項はこちら。あなたのスキルセットを当組織で活かしてください。</p>
+            <h3>採用情報<br><small style="color:#999; font-size:12px;">RECRUIT</small></h3>
+            <p>ベース・ドラム部門の募集要項。あなたのスキルセットを当組織で活かしてください。</p>
+        </a>
+        <a href="ongen.html" class="card">
+            <h3>製品ラインナップ<br><small style="color:#999; font-size:12px;">PRODUCTS</small></h3>
+            <p>夕張工業団地がリリースした「音源」という名の工業製品群を公開しています。</p>
         </a>
         <a href="#" class="card">
-            <h3>製品ラインナップ / PRODUCTS</h3>
-            <p>夕張工業団地がリリースした「音源」という名の工業製品群を紹介します。</p>
-        </a>
-        <a href="#" class="card">
-            <h3>IR情報 / INVESTORS</h3>
-            <p>ライブパフォーマンスを通じた活動報告と、今後の事業計画について。株主（リスナー）の皆様へ。</p>
+            <h3>IR情報<br><small style="color:#999; font-size:12px;">INVESTORS</small></h3>
+            <p>ライブ活動を通じた報告と事業計画。ステークホルダー（リスナー）の皆様へ。</p>
         </a>
     </div>
 </section>
