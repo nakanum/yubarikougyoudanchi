@@ -32,23 +32,6 @@ body {
     display: block;
 }
 
-.entry-group {
-    display: flex;
-    gap: 10px;
-}
-
-.entry-btn {
-    background-color: #000;
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 2px;
-    font-weight: bold;
-    font-size: 8px;
-    transition: 0.3s;
-    white-space: nowrap;
-}
-
 /* --- 2段目：サブナビゲーション --- */
 .sub-navbar {
     position: fixed;
