@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>夕張工業団地 稼働予定 | 2027-2028</title>
+    <title>稼働予定/NEWS | 夕張工業団地</title>
     <!-- 設計図を読み込む -->
     <link rel="stylesheet" href="style.css">
     <style>
+        /* スマホの文字サイズ自動調整をリセット */
+        html { -webkit-text-size-adjust: 100%; }
+
         .hero {
             background: linear-gradient(135deg, #007b43 0%, #004d2c 100%);
             color: white;
-            padding: 60px 20px 30px;
+            padding: 100px 20px 140px;
             text-align: center;
         }
         .hero p {
@@ -21,44 +24,79 @@
             margin: 0 0 10px 0;
             text-transform: uppercase;
         }
+        
+        /* PC/スマホ両対応のフォントサイズ設定 */
         .hero h1 {
             font-size: 32px;
             letter-spacing: 0.1em;
             margin: 0;
-        }  @media (max-width: 768px) {
+            line-height: 1.2;
+            word-break: break-all;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 92%;
+            margin: -80px auto 60px;
+            background: white;
+            padding: 50px 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 10;
+        }
+
+        h2 {
+            font-size: 20px;
+            border-left: 5px solid #000;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* X埋め込みカードの装飾 */
+        .audio-card {
+            background: #fff;
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* スマホ用（Recruitに合わせた挙動） */
+        @media (max-width: 768px) {
             .container { padding: 30px 20px; }
-            .hero h1 { font-size: 24px; }
+            .hero h1 { 
+                /* 画面幅に合わせて縮小、最大32px/最小20px */
+                font-size: clamp(20px, 7vw, 32px) !important; 
+            }
         }
     </style>
 </head>
 <body>
 
-    <div id="header-placeholder"></div>
+<!-- ヘッダーの差し込み口 -->
+<div id="header-placeholder"></div>
 
 <div class="hero">
     <p>LIVE SCHEDULE/NEWS</p>
     <h1>稼働予定/NEWS</h1>
 </div>
 
-<div id="header-placeholder"></div>
-<div class="container" style="margin-top: 40px;">
+<div class="container">
     <section class="audio-section">
         <h2>Latest Information</h2>
-        <div class="audio-card" style="padding: 0; overflow: hidden; border-radius: 12px;">
-            <!-- この A タグが JS によってタイムラインに置き換わる -->
-            <a class="twitter-timeline" 
-               data-height="800" 
-               data-theme="light" 
-               data-chrome="noheader nofooter noborders" 
-               data-link-color="#007b43"
-               href="https://twitter.com/YKD_DKY?ref_src=twsrc%5Etfw">
-               通信中...
-            </a> 
-            <!-- このスクリプトが重要。これが TL を生成する -->
+        <div class="audio-card">
+            <!-- X 個別ポスト埋め込みここから（URLを任意のポストに貼り替えて） -->
+            <blockquote class="twitter-tweet" data-media-hidden="false" data-lang="ja">
+                <a href="https://x.com/YKD_DKY/status/2046549196183146863?s=20"></a>
+            </blockquote>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <!-- X 個別ポスト埋め込みここまで -->
         </div>
     </section>
-</div>
 </div>
 
 <footer>
@@ -73,5 +111,6 @@
         })
         .catch(error => console.error('Error:', error));
 </script>
+
 </body>
 </html>
