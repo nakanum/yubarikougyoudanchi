@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製品ラインナップ（音源） | 夕張工業団地</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; color: #333; line-height: 1.8; margin: 0; padding: 0; background-color: #f4f7f4; padding-top: 95px; }
+        
+        /* Navigation (共通) */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 50px; background-color: #007b43; color: white; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; box-sizing: border-box; z-index: 1001; }
+        .sub-navbar { position: fixed; top: 50px; left: 0; width: 100%; height: 45px; background-color: #ffffff; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .sub-nav-list { display: flex; list-style: none; margin: 0; padding: 0; }
+        .sub-nav-list li a { text-decoration: none; color: #444; font-size: 13px; font-weight: bold; padding: 0 20px; display: block; line-height: 45px; transition: 0.3s; }
+        .sub-nav-list li a:hover { color: #007b43; }
+        .nav-logo { height: 20px; width: auto; vertical-align: middle; }
+        .entry-btn { background-color: #000; color: white; text-decoration: none; padding: 5px 10px; border-radius: 2px; font-weight: bold; font-size: 11px; }
+
+        /* Hero */
+        .hero { background: #007b43; color: white; padding: 60px 20px; text-align: center; }
+        .hero h1 { font-size: 28px; margin: 0; letter-spacing: 0.1em; }
+
+        /* Product Section */
+        .product-section { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .product-item { background: white; padding: 30px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 4px solid #007b43; margin-bottom: 30px; }
+        .product-item h2 { font-size: 20px; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .platform-label { font-size: 11px; font-weight: bold; color: #666; margin-top: 20px; display: block; text-transform: uppercase; }
+        
+        iframe { border-radius: 8px; width: 100%; border: none; margin-top: 10px; }
+        
+        footer { text-align: center; padding: 40px; font-size: 11px; color: #999; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html"><img src="https://lh3.googleusercontent.com/d/1uk5KbWNKLEvGzrEj_hkJ2Itcagl5uRla" alt="夕張工業団地" class="nav-logo"></a>
+    <a href="mailto:ykdband@gmail.com" class="entry-btn">ENTRY</a>
+</nav>
+
+<nav class="sub-navbar">
+    <ul class="sub-nav-list">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="products.html">音源</a></li>
+        <li><a href="#">IR（活動報告）</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <p>Product Lineup</p>
+    <h1>製造物一覧（Streaming & Demo）</h1>
+</div>
+
+<div class="product-section">
+    <!-- Spotify / Apple Music Section -->
+    <div class="product-item">
+        <h2>主要配信プラットフォーム</h2>
+        <p>「縹色の夏」をはじめとする各種製品（音源）のストリーミング配信ラインです。</p>
+        
+        <span class="platform-label">Spotify</span>
+        <iframe src="https://open.spotify.com/embed/artist/1HwXj1S3hwMTeu5P05A6lG?utm_source=generator" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        <span class="platform-label">Apple Music</span>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-many-others allow-scripts allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/artist/%E5%A4%95%E5%BC%B5%E5%B7%A5%E6%A5%AD%E5%9B%A3%E5%9C%B0/1865645825"></iframe>
+    </div>
+
+    <!-- SoundCloud Section -->
+    <div class="product-item">
+        <h2>プロトタイプ（SoundCloud）</h2>
+        <p>研究開発（R&D）段階の未発表音源およびデモトラックの公開ラインです。</p>
+        
+        <span class="platform-label">SoundCloud</span>
+        <!-- ユーザーページを埋め込む形式に設定 -->
+        <iframe height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/924088991&color=%23007b43&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+</div>
+
+<footer>
+    © 2026 YUBARI INDUSTRIAL DISTRICT All Rights Reserved.
+</footer>
+
+</body>
+</html>
